@@ -7,3 +7,5 @@ I have only made this bot to practice some of the features that Selenium offers,
 5. Run run.py :)
 
 NOTE: If you are getting captcha error, on line 26 delete "options=options", and edit line 52 where instead of wait(), type time.sleep(60) or however many seconds, so a browser can open and you can solve the captcha before the bot proceeds. Also open Mozilla and type about:config, search for "dom.webdriver.enabled" and make sure its on False, this should essentially bypass the triggering of captcha, most of the times. It doesn't always work but its a 50/50 solution for now until a proper bypass comes in the future.
+
+![example](example.gif)
