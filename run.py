@@ -69,7 +69,7 @@ wait()
 driver.find_element_by_xpath('//*[@id="m2"]/div[5]/a').click()
 wait()
 try:
-    driver.find_element_by_name('bonus').click()
+    driver.find_element_by_xpath('//*[@id="m2"]/div[5]/a').click()
     print("Daily bonus collected.")
 except:
     hours = driver.find_element_by_xpath('//*[@id="content_block"]/div[2]/center/div/div/span[1]')
