@@ -24,7 +24,7 @@ options = Options()
 options.add_argument("--headless")
 print("Starting the webdriver, please wait...")
 fp = webdriver.FirefoxProfile(firefox_path)
-driver = webdriver.Firefox(fp, options=options)
+driver = webdriver.Firefox(fp)
 
 def wait():
     WebDriverWait(driver, 30).until(lambda driver: driver.execute_script('return document.readyState') == 'complete')
@@ -42,6 +42,8 @@ def check_silver():
 
 driver.get("https://golden-farm.biz")
 wait()
+print("Cloudflare easy bypass , waiting 10 seconds")
+time.sleep(5)
 print("Logging in, please wait...")
 email = driver.find_element_by_name("log_email")
 email.send_keys(email_input)
@@ -58,11 +60,13 @@ except:
     driver.quit()
     sys.exit()
 wait()
+time.sleep(1)
 driver.find_element_by_name("collect").click()
 print("Eggs collected.")
 wait()
 driver.find_element_by_id("a3").click()
 wait()
+time.sleep(1)
 driver.find_element_by_name("sell").click()
 print("Eggs sold.")
 wait()
@@ -85,6 +89,7 @@ if silver < 150:
     driver.quit()
     sys.exit()
 print("Buying birds, please wait...")
+time.sleep(1)
 while silver >= 150:
     if silver >= 375000:
         driver.find_element_by_xpath('//*[@id="content_block"]/div[3]/div[7]/form/div[2]/input[2]').clear()
