@@ -77,6 +77,7 @@ try:
     driver.find_element_by_name('bonus').click()
     print("Daily bonus collected.")
 except:
+    time.sleep(1)
     hours = driver.find_element_by_xpath('//*[@id="content_block"]/div[2]/center/div/div/span[1]')
     minutes = driver.find_element_by_xpath('//*[@id="content_block"]/div[2]/center/div/div/span[2]')
     seconds = driver.find_element_by_xpath('//*[@id="content_block"]/div[2]/center/div/div/span[3]')
